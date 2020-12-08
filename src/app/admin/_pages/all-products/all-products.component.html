@@ -1,0 +1,30 @@
+<!--<ul class="product-cart">-->
+<!--  <li-->
+<!--    *ngFor="let product of allProducts"-->
+<!--    class="product-cart__item"-->
+<!--  >-->
+<!--    <img [src]="product.img" />-->
+<!--    <h4>title: {{product.title}}</h4>-->
+<!--    <div class="product-cart__item__description">description: {{product.description}}</div>-->
+<!--  </li>-->
+<!--</ul>-->
+<nz-table [nzData]="allProducts">
+  <thead>
+  <tr>
+    <th></th>
+    <th>title</th>
+    <th>status</th>
+    <th>quantity</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of allProducts">
+    <td>
+      <img [src]="product.img" alt="" class="product-img"/>
+    </td>
+    <td>{{product.title}}</td>
+    <td>{{product.status}}</td>
+    <td>{{product.quantity}}</td>
+  </tr>
+  </tbody>
+</nz-table>

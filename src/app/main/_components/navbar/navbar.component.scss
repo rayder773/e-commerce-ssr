@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  padding: 1em 0;
+  justify-content: space-between;
+  * {
+    display: flex;
+  }
+
+  &__menu {
+    width: 100%;
+
+    justify-content: space-between;
+
+    &__list {
+      align-items: center;
+
+      li {
+        margin: 0 1em;
+      }
+    }
+  }
+
+  .active-route {
+    color: red;
+  }
+}
