@@ -1,12 +1,10 @@
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import {
   ServerModule,
   ServerTransferStateModule
-} from "@angular/platform-server";
-import { AppComponent } from "./app.component";
-import { AppModule } from "./app.module";
-import { UniversalInterceptorService } from "./modules/shared/interceptors/universal-interceptor.service";
+} from '@angular/platform-server';
+import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 @NgModule({
   imports: [
@@ -20,11 +18,6 @@ import { UniversalInterceptorService } from "./modules/shared/interceptors/unive
   // imported AppModule, it needs to be repeated here.
   bootstrap: [AppComponent],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: UniversalInterceptorService,
-      multi: true // <-- important (you can have many interceptors)
-    }
   ]
 })
 export class AppServerModule {}
